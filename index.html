@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<header
+			class="shadow-lg bg-white p-2 flex items-center justify-between px-4 max-w-[1700px] mx-auto"
+		>
+			<div class="flex items-center">
+				<img src="/imw-logo.png" class="w-16" />
+				<h1 class="font-medium text-lg">Metodista Wesleyana</h1>
+			</div>
+			<nav class="ml-12">
+				<ul class="flex gap-4 text-gray-500">
+					<li class="text-black font-medium">Historico</li>
+					<li>Relatorios</li>
+					<li>Relatorios</li>
+					<li>Relatorios</li>
+				</ul>
+			</nav>
+			<div class="flex items-center gap-4">
+				<img src="/profile.png" />
+			</div>
+		</header>
+		<main class="px-4 max-w-[1700px] mx-auto bg-white">
+			<section class="rounded-lg flex justify-center items-center gap-12">
+				<div class="p-6 rounded-xl">
+					<p class="text-gray-500 font-medium">Valor Total:</p>
+					<p class="font-medium text-3xl">R$43.324,50</p>
+				</div>
+
+				<div>
+					<div class="flex items-center gap">
+						<p class="font-medium text-gray-500">Valor entrada</p>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="green"
+						>
+							<polygon points="12,4 4,20 20,20"></polygon>
+						</svg>
+					</div>
+					<p class="font-medium text-3xl">R$3.324,50</p>
+				</div>
+				<div>
+					<div class="flex items-center gap">
+						<p class="font-medium text-gray-500">Valor saida</p>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="14"
+							height="14"
+							viewBox="0 0 24 24"
+							fill="red"
+						>
+							<polygon points="12,20 4,4 20,4"></polygon>
+						</svg>
+					</div>
+					<p class="font-medium text-3xl">R$324,50</p>
+				</div>
+			</section>
+
+			<header class="bg-white flex justify-between p-4 px-4 items-center">
+				<div>
+					<h1 class="font-bold text-3xl">Transações</h1>
+					<p class="text-zinc-400">Ultima transacao registrada : 24/05</p>
+				</div>
+				<div class="flex gap-4 items-center">
+					<form class="max-w-md mx-auto">
+						<label
+							for="default-search"
+							class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+							>Search</label
+						>
+						<div class="relative">
+							<div
+								class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+							>
+								<svg
+									class="w-4 h-4 text-gray-500 dark:text-gray-400"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 20 20"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+									/>
+								</svg>
+							</div>
+							<input
+								type="search"
+								id="default-search"
+								class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								placeholder="Buscar..."
+								required
+							/>
+						</div>
+					</form>
+
+					<div
+						id="modal"
+						class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden"
+					>
+						<
+						<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+							<!-- Modal header -->
+							<div
+								class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+							>
+								<h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+									Criar nova Transação
+								</h3>
+								<button
+									id="closeModalButton"
+									class="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+								>
+									✕
+								</button>
+							</div>
+							<!-- Modal body -->
+							<form class="p-4 md:p-5">
+								<div class="grid gap-4 mb-4 grid-cols-2">
+									<div class="col-span-2 sm:col-span-1">
+										<label
+											for="price"
+											class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+											>Valor</label
+										>
+										<input
+											type="number"
+											name="price"
+											id="price"
+											class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+											placeholder="R$29,99"
+											required=""
+										/>
+									</div>
+									<div class="col-span-2 sm:col-span-1">
+										<label
+											for="price"
+											class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+											>Data</label
+										>
+										<input
+											type="number"
+											name="price"
+											id="price"
+											class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+											placeholder="15/02/25"
+											required=""
+										/>
+									</div>
+									<div class="col-span-2 sm:col-span-1">
+										<label
+											for="category"
+											class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+											>Categoria</label
+										>
+										<select
+											id="category"
+											class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+										>
+											<option selected="">Departamento 1</option>
+											<option value="TV">Departamento 2</option>
+											<option value="PC">Departamento 3</option>
+											<option value="GA">Departamento 4</option>
+											<option value="PH">Departamento 5</option>
+										</select>
+									</div>
+									<div class="col-span-2 sm:col-span-1">
+										<label
+											for="category"
+											class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+											>Categoria</label
+										>
+										<fieldset class="">
+											<legend class="sr-only">Countries</legend>
+
+											<div class="flex items-center mb-2">
+												<input
+													id="country-option-1"
+													type="radio"
+													name="countries"
+													value="USA"
+													class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+													checked
+												/>
+												<label
+													for="country-option-1"
+													class="block ms-2 text-sm text-gray-900 dark:text-gray-300"
+												>
+													Entrada
+												</label>
+											</div>
+											<div class="flex items-center mb-4">
+												<input
+													id="country-option-1"
+													type="radio"
+													name="countries"
+													value="USA"
+													class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+													checked
+												/>
+												<label
+													for="country-option-1"
+													class="block ms-2 text-sm text-gray-900 dark:text-gray-300"
+												>
+													Saida
+												</label>
+											</div>
+										</fieldset>
+									</div>
+
+									<div class="col-span-2">
+										<label
+											class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+											for="user_avatar"
+											>Upload file</label
+										>
+										<input
+											class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+											aria-describedby="user_avatar_help"
+											id="user_avatar"
+											type="file"
+										/>
+									</div>
+									<div class="col-span-2">
+										<label
+											for="description"
+											class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+											>Descrição</label
+										>
+										<textarea
+											id="description"
+											rows="4"
+											class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											placeholder="Escreva a descrição da transação aqui..."
+										></textarea>
+									</div>
+								</div>
+								<button
+									type="submit"
+									class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+								>
+									<svg
+										class="me-1 -ms-1 w-5 h-5"
+										fill="currentColor"
+										viewBox="0 0 20 20"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											fill-rule="evenodd"
+											d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+											clip-rule="evenodd"
+										></path>
+									</svg>
+									Add new product
+								</button>
+							</form>
+						</div>
+					</div>
+
+					<button
+						type="button"
+						id="openModalButton"
+						class="bg-blue-500 text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+					>
+						Adicionar Transação
+					</button>
+				</div>
+			</header>
+			<section
+				class="relative max-h-[550px] overflow-auto bg-white p-4 rounded-lg mt-4"
+			>
+				<table
+					class="w-full text-sm text-left shadow-md rtl:text-right text-gray-500 dark:text-gray-400 border-collapse"
+				>
+					<thead
+						class="sticky -top-4 bg-white p-2 dark:bg-gray-700 text-gray-700 dark:text-gray-400 uppercase text-xs z-[1]"
+					>
+						<tr class="text-center border-b border-gray-300">
+							<th scope="col" class="px-6 py-3">Data da movimentação</th>
+							<th scope="col" class="px-6 py-3">Tipo</th>
+							<th scope="col" class="px-6 py-3">Preço</th>
+							<th scope="col" class="px-6 py-3">Descrição</th>
+							<th scope="col" class="px-6 py-3">Comprovante</th>
+							<th scope="col" class="px-6 py-3">Categoria</th>
+							<button class="edit-btn" onclick="editarElemento(1)">
+								<i class="fas fa-pencil-alt"></i> Editar
+							</button>
+						</tr>
+					</thead>
+					<tbody id="transactionTableBody" class="text-gray-800"></tbody>
+				</table>
+			</section>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
